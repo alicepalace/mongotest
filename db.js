@@ -11,7 +11,8 @@ module.exports = {
             })
             .catch(err => {
                 console.log(err);
-                return cb(err);
+                //return cb(err);
+                cb(error);
             });
     },
     getDb: () => dbConnection
