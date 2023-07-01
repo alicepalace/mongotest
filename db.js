@@ -2,9 +2,11 @@ const { MongoClient } = require('mongodb');
 
 let dbConnection
 
+let uri = 'mongodb+srv://bbnewborn:DnbfDhYe5ae9OPDM@cluster0.58dlxkn.mongodb.net/?retryWrites=true&w=majority';
+
 module.exports = {
     connectToDb: (cb) => {
-        MongoClient.connect('mongodb://127.0.0.1:27017/bookstore')
+        MongoClient.connect(uri)
             .then((client) => {
                 dbConnection = client.db();
                 return cb();
